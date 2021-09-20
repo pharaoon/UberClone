@@ -1,7 +1,7 @@
 import React from 'react';
-import {Flatlist, StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native';
+import {FlatList, SafeAreaView, StyleSheet, Image, Text, TouchableOpacity, View } from 'react-native';
 
-export const NavOptions: React.FunctionComponent<Void> = () => {
+export const NavOptions = () => {
 const data = [
   {
     id: "123",
@@ -17,12 +17,14 @@ const data = [
   },
 ];
   return (
-    <Flatlist
+    <SafeAreaView>
+    <FlatList
         data={data}
         keyExtractor={({id}) => id.toString()}
         renderItem={({ item }) => (
           <Text>{item.title}</Text>
         )}
     />
+    </SafeAreaView>
   );
 };
